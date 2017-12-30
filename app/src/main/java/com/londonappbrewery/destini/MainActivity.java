@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the top button:
-        mButtonTop.setOnClickListener(new View.OnClickListener() {
+        mTopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("Destini", "TOP BUTTON clicked!");
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the bottom button:
-        mButtonBottom.setOnClickListener(new View.OnClickListener() {
+        mBottomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("Destini", "BOTTOM BUTTON clicked!");
