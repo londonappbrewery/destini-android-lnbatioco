@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mTopButton;
     private Button mBottomButton;
     private TextView mStoryTextView;
+    private int mStoryIndex = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,18 +32,45 @@ public class MainActivity extends AppCompatActivity {
         mTopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Destini", "TOP BUTTON clicked!");
-            };
+                if (mStoryIndex == 1) {
+                    mStoryTextView.setText(R.string.T3_Story);
+                    mTopButton.setText(R.string.T3_Ans1);
+                    mBottomButton.setText(R.string.T3_Ans2);
+                    mStoryIndex = 3;
+                } else if (mStoryIndex == 3) {
+                    mStoryTextView.setText(R.string.T6_End);
+                    mTopButton.setVisibility(View.GONE);
+                    mBottomButton.setVisibility(View.GONE);
+                } else if (mStoryIndex == 2) {
+                    mStoryTextView.setText(R.string.T3_Story);
+                    mTopButton.setText(R.string.T3_Ans1);
+                    mBottomButton.setText(R.string.T3_Ans2);
+                    mStoryIndex = 3;
+                }
+            }
         });
+
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the bottom button:
         mBottomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Destini", "BOTTOM BUTTON clicked!");
+                if (mStoryIndex == 1) {
+                    mStoryTextView.setText(R.string.T2_Story);
+                    mTopButton.setText(R.string.T2_Ans1);
+                    mBottomButton.setText(R.string.T2_Ans2);
+                    mStoryIndex = 2;
+                } else if (mStoryIndex == 2) {
+                    mStoryTextView.setText(R.string.T4_End);
+                    mTopButton.setVisibility(View.GONE);
+                    mBottomButton.setVisibility(View.GONE);
+                } else if (mStoryIndex == 3) {
+                    mStoryTextView.setText(R.string.T5_End);
+                    mTopButton.setVisibility(View.GONE);
+                    mBottomButton.setVisibility(View.GONE);
+                }
             }
         });
-
 
     }
 }
